@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PingX VPN - #1 Gaming VPN for Myanmar</title>
+    <!-- Importing Google Fonts for Gamer Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Importing Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CIVIL ENGINEER'S CSS BLUEPRINT --- */
+        
+        :root {
+            --neon-green: #39FF14;
+            --dark-bg: #050505;
+            --panel-bg: #121212;
+            --text-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif; /* Sci-Fi Font */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--neon-green);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--neon-green);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-green);
+        }
+
+        /* HERO SECTION (Home) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--neon-green);
+            color: black;
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            box-shadow: 0 0 25px white;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* FEATURES SECTION */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--neon-green);
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 40px;
+            color: var(--neon-green);
+            margin-bottom: 20px;
+        }
+
+        /* PRICING SECTION */
+        .pricing-box {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border: 2px solid var(--neon-green);
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        .price {
+            font-size: 48px;
+            color: var(--neon-green);
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .reseller-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .reseller-btn {
+            display: block;
+            background: #222;
+            color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            border-left: 5px solid var(--neon-green);
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .reseller-btn:hover {
+            background: #333;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* MOBILE ADJUSTMENTS */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Hide menu links on small mobile for simplicity */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">PING<span style="color:white">X</span></a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#setup">Setup</a>
+                <a href="#support">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dominate The Game</h1>
+            <p>40ms Low Ping for MLBB & PUBG in Myanmar.</p>
+            <p>Fix Lag. Secure KPay. Anti-Block.</p>
+            <br>
+            <a href="#" class="btn btn-primary"><i class="fab fa-android"></i> Download APK</a>
+            <a href="#" class="btn btn-outline"><i class="fab fa-google-play"></i> Google Play</a>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="section">
+        <h2 style="color: var(--neon-green);">Why PingX?</h2>
+        <div class="grid-container">
+            <!-- Feature 1 -->
+            <div class="card">
+                <i class="fas fa-bolt icon"></i>
+                <h3>Low Ping</h3>
+                <p>Singapore Gaming Servers optimized for Mobile Legends and PUBG. 40ms Stable.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="card">
+                <i class="fas fa-user-secret icon"></i>
+                <h3>Anti-Block Reality</h3>
+                <p>Uses VLESS-Reality protocol. Works even if MPT/Atom blocks normal VPNs.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="card">
+                <i class="fas fa-wallet icon"></i>
+                <h3>Easy Payment</h3>
+                <p>We accept KPay, Wave, and AYA via our official Reseller network.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="section" style="background-color: #0a0a0a;">
+        <h2>Simple Pricing</h2>
+        <br>
+        <div class="pricing-box">
+            <h3>VIP Access</h3>
+            <div class="price">3,000 Ks <span style="font-size:16px; color:white">/ Month</span></div>
+            <p>Unlimited Data | All Servers | No Ads</p>
+            <br>
+            <hr style="border-color:#333">
+            <br>
+            <h4>How to Buy (Select Agent):</h4>
+            <div class="reseller-list">
+                <!-- Replace # with your Reseller Links -->
+                <a href="https://t.me/YOUR_AGENT" class="reseller-btn">
+                    <i class="fab fa-telegram"></i> <strong>Agent Dragon</strong> (KPay / Wave)
+                </a>
+                <a href="viber://chat?number=YOUR_AGENT" class="reseller-btn">
+                    <i class="fab fa-viber"></i> <strong>Agent Tech</strong> (AYA / CB)
+                </a>
+                <a href="#" class="reseller-btn">
+                    <i class="fas fa-qrcode"></i> <strong>Binance Pay</strong> (Auto)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SETUP GUIDE -->
+    <section id="setup" class="section">
+        <h2>How to Activate</h2>
+        <div class="grid-container" style="text-align: left;">
+            <div class="card">
+                <h3>Step 1</h3>
+                <p>Contact an Agent above and pay 3,000 Ks.</p>
+            </div>
+            <div class="card">
+                <h3>Step 2</h3>
+                <p>Receive your <strong>PingX Key</strong> (e.g., VIP-8844).</p>
+            </div>
+            <div class="card">
+                <h3>Step 3</h3>
+                <p>Open App -> Paste Key in "Redeem Code". Done!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="support">
+        <h3 style="color:white">Need Help?</h3>
+        <p>Contact us on Telegram for 24/7 Support</p>
+        <br>
+        <a href="https://t.me/PingX_VPN" class="btn btn-outline" style="padding: 10px 20px;">Open Telegram Support</a>
+        <br><br><br>
+        <p>&copy; 2024 PingX VPN. All rights reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+</body>
+</html>
