@@ -3,340 +3,532 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PingX VPN - #1 Gaming VPN for Myanmar</title>
-    <!-- Importing Google Fonts for Gamer Look -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Importing Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>PingX VPN | Fast, Secure & Limitless</title>
     
+    <!-- Google Fonts: Inter (Clean, Professional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* --- CIVIL ENGINEER'S CSS BLUEPRINT --- */
-        
         :root {
-            --neon-green: #39FF14;
-            --dark-bg: #050505;
-            --panel-bg: #121212;
-            --text-white: #ffffff;
+            --primary: #39FF14; /* Neon Green */
+            --primary-dim: #2cb812;
+            --bg-dark: #0a0a0a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--dark-bg);
-            color: var(--text-white);
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(57, 255, 20, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(57, 255, 20, 0.05) 0%, transparent 40%);
+            color: var(--text-main);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif; /* Sci-Fi Font */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* NAVIGATION BAR */
+        /* --- NAVIGATION --- */
         nav {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--neon-green);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.8);
+            border-bottom: 1px solid var(--glass-border);
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--neon-green);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
         }
 
-        .nav-links a {
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .brand-name {
+            font-weight: 800;
+            font-size: 1.5rem;
             color: white;
+            letter-spacing: -1px;
+        }
+
+        .brand-name span { color: var(--primary); }
+
+        .nav-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--neon-green);
+        .nav-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
-        /* HERO SECTION (Home) */
-        .hero {
-            height: 100vh;
+        /* --- HERO SECTION --- */
+        header {
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
-            padding: 20px;
+            padding: 120px 20px 50px;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero-content p {
+        .highlight {
+            color: var(--primary);
+            -webkit-text-fill-color: var(--primary);
+        }
+
+        p.subtitle {
             font-size: 1.2rem;
-            color: #cccccc;
-            margin-bottom: 30px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 10px;
-            border-radius: 5px;
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
         }
+
+        .btn:hover { transform: translateY(-3px); }
 
         .btn-primary {
-            background-color: var(--neon-green);
+            background: var(--primary);
             color: black;
-            box-shadow: 0 0 15px var(--neon-green);
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
         }
 
-        .btn-primary:hover {
-            background-color: white;
-            box-shadow: 0 0 25px white;
-        }
-
-        .btn-outline {
-            border: 2px solid white;
+        .btn-glass {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             color: white;
         }
 
-        .btn-outline:hover {
-            background-color: white;
-            color: black;
+        /* --- MOCKUP PLACEHOLDER --- */
+        .mockup-container {
+            margin-top: 60px;
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
+        
+        .mockup-text { color: var(--text-muted); font-size: 0.9rem; }
 
-        /* FEATURES SECTION */
-        .section {
-            padding: 80px 20px;
+        /* --- FEATURES GRID --- */
+        .section { padding: 100px 5%; }
+        
+        .section-header {
             text-align: center;
+            margin-bottom: 60px;
         }
 
-        .grid-container {
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-header p { color: var(--text-muted); }
+
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            margin: 40px auto;
         }
 
         .card {
-            background: var(--panel-bg);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #333;
+            border-radius: 20px;
             transition: 0.3s;
         }
 
         .card:hover {
-            border-color: var(--neon-green);
-            transform: translateY(-5px);
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.08);
         }
 
-        .icon {
-            font-size: 40px;
-            color: var(--neon-green);
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(57, 255, 20, 0.1);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
             margin-bottom: 20px;
         }
 
-        /* PRICING SECTION */
-        .pricing-box {
-            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-            border: 2px solid var(--neon-green);
+        /* --- PRICING SECTION --- */
+        .pricing-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            background: var(--glass-bg);
+            padding: 5px;
+            border-radius: 50px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid var(--glass-border);
+        }
+
+        .pricing-tab {
+            padding: 10px 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .pricing-tab.active {
+            background: var(--text-main);
+            color: black;
+        }
+
+        .price-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             padding: 40px;
-            max-width: 500px;
-            margin: 0 auto;
-            border-radius: 15px;
-        }
-
-        .price {
-            font-size: 48px;
-            color: var(--neon-green);
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .reseller-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .reseller-btn {
-            display: block;
-            background: #222;
-            color: white;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            border-left: 5px solid var(--neon-green);
-            text-align: left;
-            transition: 0.2s;
-        }
-
-        .reseller-btn:hover {
-            background: #333;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #000;
-            padding: 40px 20px;
+            border-radius: 24px;
             text-align: center;
-            border-top: 1px solid #333;
-            font-size: 14px;
-            color: #666;
+            position: relative;
         }
 
-        footer a {
-            color: #888;
-            text-decoration: none;
-            margin: 0 10px;
+        .price-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
         }
 
-        /* MOBILE ADJUSTMENTS */
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: black;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+            color: white;
+        }
+
+        .price-tag span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #ff4444;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .features-list i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 50px 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .footer-links a { color: var(--text-muted); text-decoration: none; }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Hide menu links on small mobile for simplicity */
+            h1 { font-size: 2.5rem; }
+            .pricing-controls { width: 100%; }
+            .pricing-tab { width: 50%; text-align: center; padding: 10px 0; }
         }
+
+        /* Utility Class to Hide Elements */
+        .hidden { display: none; }
     </style>
 </head>
 <body>
 
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">PING<span style="color:white">X</span></a>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#setup">Setup</a>
-                <a href="#support">Support</a>
-            </div>
-        </div>
+        <a href="#" class="logo-container">
+            <!-- Upload your logo.png to GitHub to see it here, or use text fallback -->
+            <!-- <img src="logo.png" alt="PingX" class="logo-img"> -->
+            <div class="brand-name">PING<span>X</span></div>
+        </a>
+        <a href="https://t.me/PingX_VPN" class="nav-btn"><i class="fab fa-telegram-plane"></i> Support</a>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Dominate The Game</h1>
-            <p>40ms Low Ping for MLBB & PUBG in Myanmar.</p>
-            <p>Fix Lag. Secure KPay. Anti-Block.</p>
-            <br>
-            <a href="#" class="btn btn-primary"><i class="fab fa-android"></i> Download APK</a>
-            <a href="#" class="btn btn-outline"><i class="fab fa-google-play"></i> Google Play</a>
+    <header>
+        <div class="badge" style="position: relative; top: 0; left: 0; transform: none; display: inline-block; margin-bottom: 20px;">
+            V2.0 NOW LIVE
         </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section id="features" class="section">
-        <h2 style="color: var(--neon-green);">Why PingX?</h2>
-        <div class="grid-container">
-            <!-- Feature 1 -->
-            <div class="card">
-                <i class="fas fa-bolt icon"></i>
-                <h3>Low Ping</h3>
-                <p>Singapore Gaming Servers optimized for Mobile Legends and PUBG. 40ms Stable.</p>
-            </div>
-            <!-- Feature 2 -->
-            <div class="card">
-                <i class="fas fa-user-secret icon"></i>
-                <h3>Anti-Block Reality</h3>
-                <p>Uses VLESS-Reality protocol. Works even if MPT/Atom blocks normal VPNs.</p>
-            </div>
-            <!-- Feature 3 -->
-            <div class="card">
-                <i class="fas fa-wallet icon"></i>
-                <h3>Easy Payment</h3>
-                <p>We accept KPay, Wave, and AYA via our official Reseller network.</p>
-            </div>
+        <h1>
+            Global Access.<br>
+            <span class="highlight">Professional Speed.</span>
+        </h1>
+        <p class="subtitle">
+            The ultra-low latency connection for Southeast Asia. 
+            Optimized for Gaming, Streaming, and Secure browsing.
+        </p>
+        
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">
+                <i class="fab fa-android"></i> Download APK
+            </a>
+            <a href="#" class="btn btn-glass">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
         </div>
-    </section>
 
-    <!-- PRICING SECTION -->
-    <section id="pricing" class="section" style="background-color: #0a0a0a;">
-        <h2>Simple Pricing</h2>
-        <br>
-        <div class="pricing-box">
-            <h3>VIP Access</h3>
-            <div class="price">3,000 Ks <span style="font-size:16px; color:white">/ Month</span></div>
-            <p>Unlimited Data | All Servers | No Ads</p>
-            <br>
-            <hr style="border-color:#333">
-            <br>
-            <h4>How to Buy (Select Agent):</h4>
-            <div class="reseller-list">
-                <!-- Replace # with your Reseller Links -->
-                <a href="https://t.me/YOUR_AGENT" class="reseller-btn">
-                    <i class="fab fa-telegram"></i> <strong>Agent Dragon</strong> (KPay / Wave)
-                </a>
-                <a href="viber://chat?number=YOUR_AGENT" class="reseller-btn">
-                    <i class="fab fa-viber"></i> <strong>Agent Tech</strong> (AYA / CB)
-                </a>
-                <a href="#" class="reseller-btn">
-                    <i class="fas fa-qrcode"></i> <strong>Binance Pay</strong> (Auto)
-                </a>
+        <!-- MOCKUP AREA (Use Canva to make a phone mockup and replace this div with an <img>) -->
+        <div class="mockup-container">
+            <p class="mockup-text">[ Replace this with your App Screenshot Image from Canva ]</p>
+        </div>
+    </header>
+
+    <!-- FEATURES -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Engineered for Performance</h2>
+            <p>Enterprise-grade infrastructure for personal use.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-gamepad"></i></div>
+                <h3>Low Latency</h3>
+                <p>Direct fiber routes to Singapore & Thailand. 40ms stable ping for competitive gaming.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                <h3>Bank-Grade Security</h3>
+                <p>Your data is encrypted. We hide your location from ISPs and protect your financial transactions.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-globe"></i></div>
+                <h3>Global Access</h3>
+                <p>Servers in Singapore, USA, and Germany. Unblock content anywhere.</p>
             </div>
         </div>
     </section>
 
-    <!-- SETUP GUIDE -->
-    <section id="setup" class="section">
-        <h2>How to Activate</h2>
-        <div class="grid-container" style="text-align: left;">
-            <div class="card">
-                <h3>Step 1</h3>
-                <p>Contact an Agent above and pay 3,000 Ks.</p>
+    <!-- PRICING -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Flexible Pricing</h2>
+            <p>Choose the plan that fits your region.</p>
+        </div>
+
+        <!-- Toggle Switch -->
+        <div class="pricing-controls">
+            <div class="pricing-tab active" onclick="switchPricing('mm')">Myanmar 🇲🇲</div>
+            <div class="pricing-tab" onclick="switchPricing('intl')">International 🌏</div>
+        </div>
+
+        <!-- Myanmar Pricing (Visible by default) -->
+        <div id="pricing-mm" class="grid" style="max-width: 900px; margin: 0 auto;">
+            <!-- Monthly -->
+            <div class="price-card">
+                <h3>Monthly</h3>
+                <div class="price-tag">
+                    <span class="old-price">4,000 Ks</span>
+                    3,000 Ks <span>/mo</span>
+                </div>
+                <p style="color:var(--primary); font-size: 0.9rem;">Limited Time Offer</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Unlimited Data</li>
+                    <li><i class="fas fa-check"></i> VIP Gaming Servers</li>
+                    <li><i class="fas fa-check"></i> 2 Devices</li>
+                </ul>
+                <a href="https://t.me/PingX_VPN" class="btn btn-glass" style="width: 100%; justify-content: center;">Buy via Reseller</a>
+                <div class="payment-icons">
+                    <i class="fas fa-wallet"></i> KPay / Wave / AYA
+                </div>
             </div>
-            <div class="card">
-                <h3>Step 2</h3>
-                <p>Receive your <strong>PingX Key</strong> (e.g., VIP-8844).</p>
+
+            <!-- Yearly -->
+            <div class="price-card featured">
+                <div class="badge">BEST VALUE</div>
+                <h3>Yearly</h3>
+                <div class="price-tag">
+                    30,000 Ks <span>/yr</span>
+                </div>
+                <p style="color:var(--text-muted); font-size: 0.9rem;">Save 6,000 Ks</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> All Monthly Features</li>
+                    <li><i class="fas fa-check"></i> Priority Support</li>
+                    <li><i class="fas fa-check"></i> No Ads</li>
+                </ul>
+                <a href="https://t.me/PingX_VPN" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Yearly Plan</a>
             </div>
-            <div class="card">
-                <h3>Step 3</h3>
-                <p>Open App -> Paste Key in "Redeem Code". Done!</p>
+        </div>
+
+        <!-- International Pricing (Hidden by default) -->
+        <div id="pricing-intl" class="grid hidden" style="max-width: 900px; margin: 0 auto;">
+            <div class="price-card">
+                <h3>Global Monthly</h3>
+                <div class="price-tag">
+                    $1.50 <span>/mo</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Access All Servers</li>
+                    <li><i class="fas fa-check"></i> Auto-Renewal</li>
+                </ul>
+                <a href="#" class="btn btn-glass" style="width: 100%; justify-content: center;">Subscribe in App</a>
+                <div class="payment-icons">
+                    <i class="fab fa-google-play"></i> Google Play Billing
+                </div>
+            </div>
+
+            <div class="price-card featured">
+                <div class="badge">SAVE 20%</div>
+                <h3>Global Yearly</h3>
+                <div class="price-tag">
+                    $15.00 <span>/yr</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Best for Expats</li>
+                    <li><i class="fas fa-check"></i> 12 Months Access</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Subscribe in App</a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="support">
-        <h3 style="color:white">Need Help?</h3>
-        <p>Contact us on Telegram for 24/7 Support</p>
-        <br>
-        <a href="https://t.me/pingx_official" class="btn btn-outline" style="padding: 10px 20px;">Open Telegram Support</a>
-        <br><br><br>
-        <p>&copy; 2024 PingX VPN. All rights reserved.</p>
-        <div>
-            <a href="https://docs.google.com/document/d/1uluqWxGYDGHvrn40RRbn18qXrJyX0ofMaHXSRDYRNAk/edit?usp=sharing">Privacy Policy</a> | <a href="https://docs.google.com/document/d/1H7fnkgxdpIOyVoS2D8kcOFgZENDv1mG-GookdqX1ou4/edit?usp=sharing">Terms of Service</a>
+    <footer>
+        <div class="brand-name" style="margin-bottom: 20px;">PING<span>X</span></div>
+        <p>The engineer's choice for secure connection.</p>
+        
+        <div class="footer-links">
+            <!-- Update these links with your Google Doc links -->
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="mailto:support@pingxvpn.com">Contact Support</a>
         </div>
+        <br>
+        <p style="opacity: 0.5; font-size: 0.8rem;">&copy; 2024 PingX VPN. All rights reserved.</p>
     </footer>
 
+    <!-- SCRIPT FOR PRICING TOGGLE -->
+    <script>
+        function switchPricing(region) {
+            // Get Elements
+            const mmGrid = document.getElementById('pricing-mm');
+            const intlGrid = document.getElementById('pricing-intl');
+            const tabs = document.querySelectorAll('.pricing-tab');
+
+            // Logic
+            if (region === 'mm') {
+                mmGrid.classList.remove('hidden');
+                intlGrid.classList.add('hidden');
+                tabs[0].classList.add('active');
+                tabs[1].classList.remove('active');
+            } else {
+                mmGrid.classList.add('hidden');
+                intlGrid.classList.remove('hidden');
+                tabs[0].classList.remove('active');
+                tabs[1].classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
